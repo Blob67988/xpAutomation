@@ -19432,3 +19432,10 @@
 2021-12-16 13:58:15 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
 2021-12-16 13:58:15 | [INFO]    | Shard 0 : Received HELLO
 2021-12-16 13:58:15 | [INFO]    | Shard 0 : Received RESUMED
+2021-12-17 01:32:13 | [INFO]    | Discordia 2.9.1
+2021-12-17 01:32:13 | [INFO]    | Connecting to Discord...
+2021-12-17 01:32:14 | [INFO]    | Authenticated as xpAutomation#1731
+2021-12-17 01:32:14 | [INFO]    | Launching shard 0 (1 out of 1)...
+2021-12-17 01:32:14 | [INFO]    | Shard 0 : Connected to wss://gateway.discord.gg
+2021-12-17 01:32:14 | [INFO]    | Shard 0 : Received HELLO
+2021-12-17 01:32:14 | [INFO]    | Shard 0 : Received READY
