@@ -60,10 +60,12 @@ end)
 
 local DeveloperData = db:get("DeveloperData")
 local Whitelist = DeveloperData.Whitelist
+local Blacklist = DeveloperData.Blacklist or {}
 
 local Cooldown = {}
 
 discordClient:on("messageCreate",function(message)
+    if Blacklist[message.author.id] ~= nil then return end
     if message.channel.type ~= 0 then return end
     if Cooldown[message.guild.id] then return end
     
@@ -96,7 +98,7 @@ discordClient:on("messageCreate",function(message)
 
     if cmds[args[1]] == nil then return end
 
-    if args[1] == "dev" and message.author.id == "346249745590910976" then cmds["dev"](rbxClient, discordClient, message, args) Timer.setTimeout(1000,function() DeveloperData = db:get("DeveloperData") Whitelist = DeveloperData.Whitelist end)return end
+    if args[1] == "dev" and message.author.id == "856348786770837534" then cmds["dev"](rbxClient, discordClient, message, args) Timer.setTimeout(1000,function() DeveloperData = db:get("DeveloperData") Blacklist = DeveloperData.Blacklist or {} Whitelist = DeveloperData.Whitelist end)return end
     if args[1] == "help" then cmds[args[1]](rbxClient, discordClient, message, args) return end
 
     if verified(message.author.id) == nil and args[1] ~= "verify" then message.channel:send(embed.new("You must verify before using commands!\n\n`r!verify <roblox username>`")) return end
@@ -119,5 +121,5 @@ end)
 
 
 
-rbxClient:run("_|WARNING:-DO-NOT-SHARE-THIS.--Sharing-this-will-allow-someone-to-log-in-as-you-and-to-steal-your-ROBUX-and-items.|_6CB0C3424E08C0706DE863AC22362693C71FDDF3BB0454E4AD6ADDBE9BE34BBC8C5B9E1785961808D4B25E12FC1B521E74B53E830A54624FDD381C23B4A182EE29A2894877AE00CCC65C7C0026E80A59CF72F8D893EF2935F7495932DAFE5CD92FA40B81A44F129CCF605CE34D816EA1C65E1F46FF18A8C2BCE29687506476167A5E6123DC7A29E3FE582766037F6AAAFD195A263D1FA209EA8D7CE42B18D6ADD6D085AE620DCEEB971CD6886431A941413A24F50AF0D8F4BCE9945EE44C322775533BADE641984C076B53712C894571B3BC1A919A525CADBF4901378B1364CD803485DF5B1020211CB27004CC93A6551D9350908F66F27BB54E37E72A0F949BD1EFBB1F8EFACADB0DA3992CD13B6E22A47A045CFCE44555031F30D6E190D0B462D427F01CD0133A44D77E2A7A7698E7690D7656AFD561668E3E3AF59E6DC32E72B20B63F7FFF1547C62ECEE04422D7A47B8F697")
-discordClient:run('Bot ODUyNDA3NjI1ODQwMzI4NzA0.YMGYdg.OOnrV_WNVVOQNrK7jDWFlyoCIQs')
+rbxClient:run("")
+discordClient:run('')

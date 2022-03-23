@@ -113,7 +113,7 @@ return function (rbx, client, message, args)
             if Guild.Roles[tonumber(v)] == nil then message.channel:send(embed.new("`"..v.."` is not a valid RankId.")) goto cont end
             if Guild.Roles[tonumber(v)].Locked == true then message.channel:send(embed.new("**"..Guild.Roles[tonumber(v)].Name.."** is already locked.")) goto cont end
             Guild.Roles[tonumber(v)].Locked = true
-            message.channel:send(embed.new("**"..Guild.Roles[tonumber(v)].."** was locked."))
+            message.channel:send(embed.new("**"..Guild.Roles[tonumber(v)].Name.."** was locked."))
             ::cont::
         end
         db:set(Guild,message.guild.id)
